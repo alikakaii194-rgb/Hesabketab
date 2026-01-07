@@ -1,0 +1,1 @@
+-- Dummy migration to trigger workflow

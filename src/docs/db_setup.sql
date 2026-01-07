@@ -1,0 +1,7 @@
+-- This file has been deprecated and its content moved to
+-- supabase/migrations/20240101000000_initial_schema.sql
+-- Please use the Supabase CLI to manage your database schema.
+--
+-- Example commands:
+-- supabase link --project-ref <your-project-id>
+-- supabase db push

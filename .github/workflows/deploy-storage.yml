@@ -1,0 +1,36 @@
+name: Deploy Supabase Storage Policies
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'supabase/migrations/storage.sql'
+
+jobs:
+  deploy-storage:
+    name: Deploy Storage Policies
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install PostgreSQL client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+
+      - name: Check for Secrets
+        id: check_secrets
+        run: |
+          if [ -z "${{ secrets.SUPABASE_DATABASE_URL }}" ]; then
+            echo "::error::SUPABASE_DATABASE_URL secret is not set. Please check repository settings."
+            exit 1
+          fi
+
+      - name: Apply Storage SQL Script
+        env:
+          SUPABASE_DATABASE_URL: ${{ secrets.SUPABASE_DATABASE_URL }}
+        run: |
+          echo "Applying SQL for storage from supabase/migrations/storage.sql..."
+          psql "$SUPABASE_DATABASE_URL" -v ON_ERROR_STOP=1 -f "supabase/migrations/storage.sql"
+          echo "Storage policies applied successfully."

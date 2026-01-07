@@ -1,0 +1,21 @@
+{
+  "name": "Hesab Ketab",
+  "short_name": "HesabKetab",
+  "description": "اپلیکیشن مدرن و جامع برای مدیریت مالی شخصی و خانوادگی",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF3E0",
+  "theme_color": "#FF9933",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 27 75% 97%; /* #FFF3E0 - Cream */
+    --foreground: 24 9.8% 10%;
+    --card: 27 75% 97%;
+    --card-foreground: 24 9.8% 10%;
+    --popover: 27 75% 97%;
+    --popover-foreground: 24 9.8% 10%;
+    --primary: 30 100% 60%; /* #FF9933 - Saffron */
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 30 20% 95%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 30 20% 95%;
+    --muted-foreground: 24 9.8% 40%;
+    --accent: 20 67% 50%; /* #CC6633 - Burnt Orange */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 30 20% 90%;
+    --input: 30 20% 90%;
+    --ring: 30 100% 60%;
+    --radius: 0.5rem;
+    
+    /* Custom variables for charts */
+    --chart-1: 30 100% 60%; /* Saffron */
+    --chart-2: 120 40% 45%; /* Green */
+    --chart-3: 20 67% 50%; /* Burnt Orange */
+    --chart-4: 220 70% 60%; /* Blue */
+    --chart-5: 0 70% 60%; /* Red */
+  }
+
+  .dark {
+    --background: 24 10% 10%;
+    --foreground: 210 40% 98%;
+    --card: 24 10% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 24 10% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 30 100% 60%;
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 24 10% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 24 10% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 20 80% 55%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 24 10% 20%;
+    --input: 24 10% 20%;
+    --ring: 30 100% 60%;
+
+    /* Custom variables for charts */
+    --chart-1: 30 100% 60%;
+    --chart-2: 120 40% 50%;
+    --chart-3: 20 80% 55%;
+    --chart-4: 220 70% 65%;
+    --chart-5: 0 75% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  .font-headline {
+    font-family: "Vazirmatn", serif;
+    font-weight: 700;
+  }
+}

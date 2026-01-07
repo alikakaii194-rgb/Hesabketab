@@ -1,0 +1,16 @@
+{
+  "placeholderImages": [
+    {
+      "id": "fatemeh-avatar",
+      "description": "Avatar for Fatemeh's user profile, a friendly cartoon rabbit.",
+      "imageUrl": "https://images.unsplash.com/photo-1599145803873-1d0b7d87f58f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjYXJ0b29uJTIwcmFiYml0fGVufDB8fHx8MTc2NzIxMzg5N3ww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "cartoon rabbit"
+    },
+    {
+      "id": "ali-avatar",
+      "description": "Avatar for Ali's user profile, a charming cartoon fox.",
+      "imageUrl": "https://images.unsplash.com/photo-1619234889912-363a03523fde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjYXJ0b29uJTIwZm94fGVufDB8fHx8MTc2NzIxMzg5Nnww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "cartoon fox"
+    }
+  ]
+}

@@ -49,3 +49,5 @@ GRANT ALL ON ALL SEQUENCES IN SCHEMA storage TO anon, authenticated, service_rol
 ALTER DEFAULT PRIVILEGES IN SCHEMA storage GRANT ALL ON TABLES TO anon, authenticated, service_role;
 ALTER DEFAULT PRIVILEGES IN SCHEMA storage GRANT ALL ON ROUTINES TO anon, authenticated, service_role;
 ALTER DEFAULT PRIVILEGES IN SCHEMA storage GRANT ALL ON SEQUENCES TO anon, authenticated, service_role;
+
+-- Trigger workflow

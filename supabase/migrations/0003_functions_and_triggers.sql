@@ -57,7 +57,7 @@ $$;
 COMMENT ON FUNCTION public.create_check IS 'Creates a new cheque with "pending" status and sets the owner_id based on the bank account.';
 
 -- --------------------------------------------------------------------
--- Function 3: Clear a Check
+-- Function 3: Clear a Check (Corrected Typo: cleared_date)
 -- --------------------------------------------------------------------
 CREATE OR REPLACE FUNCTION public.clear_check(p_check_id uuid, p_user_id uuid, p_clearance_receipt_path text)
 RETURNS void

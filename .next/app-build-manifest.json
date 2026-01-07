@@ -31,6 +31,11 @@
       "static/chunks/main-app.js",
       "static/css/app/checks/page.css",
       "static/chunks/app/checks/page.js"
+    ],
+    "/cards/[cardId]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cards/[cardId]/page.js"
     ]
   }
 }

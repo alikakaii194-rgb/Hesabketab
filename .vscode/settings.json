@@ -1,7 +1,7 @@
 {
   "IDX.aI.enableInlineCompletion": true,
   "IDX.aI.showChatInEditorTab": true,
-  "IDX.agenticWorkspace": false,
+  "IDX.agenticWorkspace": true,
   "IDX.corgiMode": true,
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"

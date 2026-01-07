@@ -1,47 +1,27 @@
-name: Deploy Supabase Schema
+name: Deploy Supabase Migrations
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'supabase/migrations/**.sql'
+      - 'supabase/migrations/**'
 
 jobs:
-  deploy-schema:
-    name: Deploy Schema
+  deploy:
+    name: Deploy Migrations
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install PostgreSQL client
-        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
 
-      - name: Check for Secrets
-        id: check_secrets
-        run: |
-          if [ -z "${{ secrets.SUPABASE_DATABASE_URL }}" ]; then
-            echo "::error::SUPABASE_DATABASE_URL secret is not set. Please check repository settings."
-            exit 1
-          fi
-
-      - name: Apply Main SQL Schema
+      - name: Push Database Migrations
         env:
-          SUPABASE_DATABASE_URL: ${{ secrets.SUPABASE_DATABASE_URL }}
-        run: |
-          # This script runs the single, comprehensive schema file.
-          # The -v ON_ERROR_STOP=1 flag ensures that the script will exit immediately if any command fails.
-          echo "Applying SQL schema from supabase/migrations/20240720000000_initial_schema.sql..."
-          psql "$SUPABASE_DATABASE_URL" -v ON_ERROR_STOP=1 -f "supabase/migrations/20240720000000_initial_schema.sql"
-          echo "Main schema script applied successfully."
-      
-      - name: Apply Column Patch Schema
-        env:
-          SUPABASE_DATABASE_URL: ${{ secrets.SUPABASE_DATABASE_URL }}
-        run: |
-          # This script adds any missing columns to existing tables.
-          echo "Applying column patch from supabase/migrations/0001_add_missing_columns.sql..."
-          psql "$SUPABASE_DATABASE_URL" -v ON_ERROR_STOP=1 -f "supabase/migrations/0001_add_missing_columns.sql"
-          echo "Column patch script applied successfully."
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DATABASE_URL }}
+        run: supabase db push

@@ -36,11 +36,3 @@ jobs:
           echo "Applying SQL schema from supabase/migrations/20240720000000_initial_schema.sql..."
           psql "$SUPABASE_DATABASE_URL" -v ON_ERROR_STOP=1 -f "supabase/migrations/20240720000000_initial_schema.sql"
           echo "Main schema script applied successfully."
-
-      - name: Apply Column Rename Patch
-        env:
-          SUPABASE_DATABASE_URL: ${{ secrets.SUPABASE_DATABASE_URL }}
-        run: |
-          # This script renames the check_id column to fix an inconsistency.
-          echo "Column rename patch applied successfully."
-          # Workflow trigger comment.
